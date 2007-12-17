@@ -109,7 +109,6 @@ Requires:	tetex-dvips
 Requires:	tetex-latex
 
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Moodle is a learning management system for producing Internet-based course Web
