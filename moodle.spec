@@ -3,12 +3,12 @@
 
 Summary:	A course management system for distance education
 Name:		moodle
-Version:	1.8.2
-Release:	%mkrel 3
+Version:	1.9.2
+Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
 URL:		http://moodle.org/
-Source0:	http://download.moodle.org/stable18/%{name}-%{version}.tgz
+Source0:	http://download.moodle.org/stable19/%{name}-%{version}.tgz
 
 Source2:	http://download.moodle.org/lang16/af_utf8.zip
 Source3:	http://download.moodle.org/lang16/sq_utf8.zip
@@ -127,7 +127,7 @@ supplement face-to-face teaching.
 %prep
 
 %setup -q -n %{name}
-%patch0 -p1
+%patch0 -p0
 
 # magic by anssi
 pushd lang; %{expand:%(for i in {2..71}; do echo "unzip -q %%SOURCE$i"; done)}; popd
@@ -153,7 +153,6 @@ rm -f filter/tex/mimetex.*
 
 # set some exec bits
 chmod 755 filter/algebra/algebra2tex.pl
-
 
 %build
 
