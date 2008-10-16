@@ -1,9 +1,10 @@
-%define _provides_exceptions perl(
 %define _requires_exceptions pear(class\\|pear(odbcsocketserver.class.php)\\|pear(smartypants.php)\\|perl(AlgParser)
+
+%undefine __find_provides
 
 Summary:	A course management system for distance education
 Name:		moodle
-Version:	1.9.2
+Version:	1.9.3
 Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
