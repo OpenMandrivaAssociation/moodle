@@ -104,7 +104,7 @@ Requires:	php-tokenizer
 Requires:	php-xml
 Requires:	php-zlib
 
-Requires:	ImageMagick
+Requires:	imagemagick
 Requires:	mimetex
 Requires:	tetex-dvips
 Requires:	tetex-latex
