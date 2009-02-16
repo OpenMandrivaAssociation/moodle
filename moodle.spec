@@ -1,93 +1,94 @@
-%define _requires_exceptions pear(class\\|pear(odbcsocketserver.class.php)\\|pear(smartypants.php)\\|perl(AlgParser)
+%define _requires_exceptions pear(class\\|pear(odbcsocketserver.class.php)\\|pear(smartypants.php)\\|perl(AlgParser)\\|pear(domxml-php4-to-php5.php)
 
 %undefine __find_provides
 
-Summary:	A course management system for distance education
-Name:		moodle
-Version:	1.9.3
-Release:	%mkrel 1
-License:	GPL
-Group:		System/Servers
-URL:		http://moodle.org/
-Source0:	http://download.moodle.org/stable19/%{name}-%{version}.tgz
+Summary:    A course management system for distance education
+Name:       moodle
+Version:    1.9.4
+Release:    %mkrel 1
+License:    GPLv2
+Group:      System/Servers
+URL:        http://moodle.org/
+Source0:    http://download.moodle.org/stable19/%{name}-%{version}.tgz
 
-Source2:	http://download.moodle.org/lang16/af_utf8.zip
-Source3:	http://download.moodle.org/lang16/sq_utf8.zip
-Source4:	http://download.moodle.org/lang16/ar_utf8.zip
-Source5:	http://download.moodle.org/lang16/eu_utf8.zip
-Source6:	http://download.moodle.org/lang16/be_utf8.zip
-Source7:	http://download.moodle.org/lang16/bs_utf8.zip
-Source8:	http://download.moodle.org/lang16/bg_utf8.zip
-Source9:	http://download.moodle.org/lang16/ca_utf8.zip
-Source10:	http://download.moodle.org/lang16/hr_utf8.zip
-Source11:	http://download.moodle.org/lang16/zh_cn_utf8.zip
-Source12:	http://download.moodle.org/lang16/zh_tw_utf8.zip
-Source13:	http://download.moodle.org/lang16/cs_utf8.zip
-Source14:	http://download.moodle.org/lang16/da_utf8.zip
-Source15:	http://download.moodle.org/lang16/nl_utf8.zip
-Source16:	http://download.moodle.org/lang16/en_us_utf8.zip
-Source17:	http://download.moodle.org/lang16/et_utf8.zip
-Source18:	http://download.moodle.org/lang16/fa_utf8.zip
-Source19:	http://download.moodle.org/lang16/fil_utf8.zip
-Source20:	http://download.moodle.org/lang16/fi_utf8.zip
-Source21:	http://download.moodle.org/lang16/fr_utf8.zip
-Source22:	http://download.moodle.org/lang16/fr_ca_utf8.zip
-Source23:	http://download.moodle.org/lang16/ga_utf8.zip
-Source24:	http://download.moodle.org/lang16/gl_utf8.zip
-Source25:	http://download.moodle.org/lang16/ka_utf8.zip
-Source26:	http://download.moodle.org/lang16/de_utf8.zip
-Source27:	http://download.moodle.org/lang16/de_du_utf8.zip
-Source28:	http://download.moodle.org/lang16/el_utf8.zip
-Source29:	http://download.moodle.org/lang16/gu_utf8.zip
-Source30:	http://download.moodle.org/lang16/he_utf8.zip
-Source31:	http://download.moodle.org/lang16/hi_utf8.zip
-Source32:	http://download.moodle.org/lang16/hu_utf8.zip
-Source33:	http://download.moodle.org/lang16/is_utf8.zip
-Source34:	http://download.moodle.org/lang16/id_utf8.zip
-Source35:	http://download.moodle.org/lang16/it_utf8.zip
-Source36:	http://download.moodle.org/lang16/ja_utf8.zip
-Source37:	http://download.moodle.org/lang16/kn_utf8.zip
-Source38:	http://download.moodle.org/lang16/km_utf8.zip
-Source39:	http://download.moodle.org/lang16/ko_utf8.zip
-Source40:	http://download.moodle.org/lang16/lt_utf8.zip
-Source41:	http://download.moodle.org/lang16/lo_utf8.zip
-Source42:	http://download.moodle.org/lang16/lv_utf8.zip
-Source43:	http://download.moodle.org/lang16/ml_utf8.zip
-Source44:	http://download.moodle.org/lang16/ms_utf8.zip
-Source45:	http://download.moodle.org/lang16/mi_tn_utf8.zip
-Source46:	http://download.moodle.org/lang16/mi_wwow_utf8.zip
-Source47:	http://download.moodle.org/lang16/mn_utf8.zip
-Source48:	http://download.moodle.org/lang16/no_utf8.zip
-Source49:	http://download.moodle.org/lang16/no_gr_utf8.zip
-Source50:	http://download.moodle.org/lang16/nn_utf8.zip
-Source51:	http://download.moodle.org/lang16/pl_utf8.zip
-Source52:	http://download.moodle.org/lang16/pt_utf8.zip
-Source53:	http://download.moodle.org/lang16/pt_br_utf8.zip
-Source54:	http://download.moodle.org/lang16/ro_utf8.zip
-Source55:	http://download.moodle.org/lang16/ru_utf8.zip
-Source56:	http://download.moodle.org/lang16/sm_utf8.zip
-Source57:	http://download.moodle.org/lang16/si_utf8.zip
-Source58:	http://download.moodle.org/lang16/sr_cr_bo_utf8.zip
-Source59:	http://download.moodle.org/lang16/sr_cr_utf8.zip
-Source60:	http://download.moodle.org/lang16/sr_lt_utf8.zip
-Source61:	http://download.moodle.org/lang16/sk_utf8.zip
-Source62:	http://download.moodle.org/lang16/sl_utf8.zip
-Source63:	http://download.moodle.org/lang16/so_utf8.zip
-Source64:	http://download.moodle.org/lang16/es_utf8.zip
-Source65:	http://download.moodle.org/lang16/sv_utf8.zip
-Source66:	http://download.moodle.org/lang16/tl_utf8.zip
-Source67:	http://download.moodle.org/lang16/ta_utf8.zip
-Source68:	http://download.moodle.org/lang16/th_utf8.zip
-Source69:	http://download.moodle.org/lang16/to_utf8.zip
-Source70:	http://download.moodle.org/lang16/tr_utf8.zip
-Source71:	http://download.moodle.org/lang16/uk_utf8.zip
-Source72:	http://download.moodle.org/lang16/vi_utf8.zip
+Source2:    http://download.moodle.org/lang16/af_utf8.zip
+Source3:    http://download.moodle.org/lang16/sq_utf8.zip
+Source4:    http://download.moodle.org/lang16/ar_utf8.zip
+Source5:    http://download.moodle.org/lang16/eu_utf8.zip
+Source6:    http://download.moodle.org/lang16/be_utf8.zip
+Source7:    http://download.moodle.org/lang16/bs_utf8.zip
+Source8:    http://download.moodle.org/lang16/bg_utf8.zip
+Source9:    http://download.moodle.org/lang16/ca_utf8.zip
+Source10:   http://download.moodle.org/lang16/hr_utf8.zip
+Source11:   http://download.moodle.org/lang16/zh_cn_utf8.zip
+Source12:   http://download.moodle.org/lang16/zh_tw_utf8.zip
+Source13:   http://download.moodle.org/lang16/cs_utf8.zip
+Source14:   http://download.moodle.org/lang16/da_utf8.zip
+Source15:   http://download.moodle.org/lang16/nl_utf8.zip
+Source16:   http://download.moodle.org/lang16/en_us_utf8.zip
+Source17:   http://download.moodle.org/lang16/et_utf8.zip
+Source18:   http://download.moodle.org/lang16/fa_utf8.zip
+Source19:   http://download.moodle.org/lang16/fil_utf8.zip
+Source20:   http://download.moodle.org/lang16/fi_utf8.zip
+Source21:   http://download.moodle.org/lang16/fr_utf8.zip
+Source22:   http://download.moodle.org/lang16/fr_ca_utf8.zip
+Source23:   http://download.moodle.org/lang16/ga_utf8.zip
+Source24:   http://download.moodle.org/lang16/gl_utf8.zip
+Source25:   http://download.moodle.org/lang16/ka_utf8.zip
+Source26:   http://download.moodle.org/lang16/de_utf8.zip
+Source27:   http://download.moodle.org/lang16/de_du_utf8.zip
+Source28:   http://download.moodle.org/lang16/el_utf8.zip
+Source29:   http://download.moodle.org/lang16/gu_utf8.zip
+Source30:   http://download.moodle.org/lang16/he_utf8.zip
+Source31:   http://download.moodle.org/lang16/hi_utf8.zip
+Source32:   http://download.moodle.org/lang16/hu_utf8.zip
+Source33:   http://download.moodle.org/lang16/is_utf8.zip
+Source34:   http://download.moodle.org/lang16/id_utf8.zip
+Source35:   http://download.moodle.org/lang16/it_utf8.zip
+Source36:   http://download.moodle.org/lang16/ja_utf8.zip
+Source37:   http://download.moodle.org/lang16/kn_utf8.zip
+Source38:   http://download.moodle.org/lang16/km_utf8.zip
+Source39:   http://download.moodle.org/lang16/ko_utf8.zip
+Source40:   http://download.moodle.org/lang16/lt_utf8.zip
+Source41:   http://download.moodle.org/lang16/lo_utf8.zip
+Source42:   http://download.moodle.org/lang16/lv_utf8.zip
+Source43:   http://download.moodle.org/lang16/ml_utf8.zip
+Source44:   http://download.moodle.org/lang16/ms_utf8.zip
+Source45:   http://download.moodle.org/lang16/mi_tn_utf8.zip
+Source46:   http://download.moodle.org/lang16/mi_wwow_utf8.zip
+Source47:   http://download.moodle.org/lang16/mn_utf8.zip
+Source48:   http://download.moodle.org/lang16/no_utf8.zip
+Source49:   http://download.moodle.org/lang16/no_gr_utf8.zip
+Source50:   http://download.moodle.org/lang16/nn_utf8.zip
+Source51:   http://download.moodle.org/lang16/pl_utf8.zip
+Source52:   http://download.moodle.org/lang16/pt_utf8.zip
+Source53:   http://download.moodle.org/lang16/pt_br_utf8.zip
+Source54:   http://download.moodle.org/lang16/ro_utf8.zip
+Source55:   http://download.moodle.org/lang16/ru_utf8.zip
+Source56:   http://download.moodle.org/lang16/sm_utf8.zip
+Source57:   http://download.moodle.org/lang16/si_utf8.zip
+Source58:   http://download.moodle.org/lang16/sr_cr_bo_utf8.zip
+Source59:   http://download.moodle.org/lang16/sr_cr_utf8.zip
+Source60:   http://download.moodle.org/lang16/sr_lt_utf8.zip
+Source61:   http://download.moodle.org/lang16/sk_utf8.zip
+Source62:   http://download.moodle.org/lang16/sl_utf8.zip
+Source63:   http://download.moodle.org/lang16/so_utf8.zip
+Source64:   http://download.moodle.org/lang16/es_utf8.zip
+Source65:   http://download.moodle.org/lang16/sv_utf8.zip
+Source66:   http://download.moodle.org/lang16/tl_utf8.zip
+Source67:   http://download.moodle.org/lang16/ta_utf8.zip
+Source68:   http://download.moodle.org/lang16/th_utf8.zip
+Source69:   http://download.moodle.org/lang16/to_utf8.zip
+Source70:   http://download.moodle.org/lang16/tr_utf8.zip
+Source71:   http://download.moodle.org/lang16/uk_utf8.zip
+Source72:   http://download.moodle.org/lang16/vi_utf8.zip
 
-Patch0:		moodle-external_mimetex.diff
+Patch0:     moodle-external_mimetex.diff
 
-BuildRequires:	apache-base >= 2.0.54
-BuildRequires:	file
-Requires(pre):	apache-mod_php php-mysql php-gd php-xml
+BuildRequires:  apache-base >= 2.0.54
+BuildRequires:  file
+Requires(pre):  apache-mod_php php-mysql php-gd php-xml
+Requires(pre):  rpm-helper   
 Requires:	apache-mod_php
 
 Requires:	php-curl
@@ -241,7 +242,7 @@ Alias /%{name} /var/www/%{name}
     Deny from All
     Allow from 127.0.0.1
     ErrorDocument 403 "Access denied per %{_sysconfdir}/httpd/conf/webapps.d/%{name}.conf"
-</Directory>
+ </Directory>
 
 <FilesMatch install.php>
     Order Deny,Allow
