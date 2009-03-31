@@ -84,6 +84,7 @@ Source71:   http://download.moodle.org/lang16/uk_utf8.zip
 Source72:   http://download.moodle.org/lang16/vi_utf8.zip
 
 Patch0:     moodle-external_mimetex.diff
+Patch1:     moodle-1.9.4-CVE-2009-1171.diff
 
 BuildRequires:  apache-base >= 2.0.54
 BuildRequires:  file
@@ -130,6 +131,7 @@ supplement face-to-face teaching.
 
 %setup -q -n %{name}
 %patch0 -p0
+%patch1 -p0
 
 # magic by anssi
 pushd lang; %{expand:%(for i in {2..71}; do echo "unzip -q %%SOURCE$i"; done)}; popd
