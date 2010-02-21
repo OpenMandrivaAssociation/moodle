@@ -5,7 +5,7 @@
 Summary:    A course management system for distance education
 Name:       moodle
 Version:    1.9.5
-Release:    %mkrel 1
+Release:    %mkrel 2
 License:    GPLv2
 Group:      System/Servers
 URL:        http://moodle.org/
@@ -86,12 +86,6 @@ Source72:   http://download.moodle.org/lang16/vi_utf8.zip
 Patch0:     moodle-external_mimetex.diff
 Patch1:     moodle-1.9.4-CVE-2009-1171.diff
 
-BuildRequires:  apache-base >= 2.0.54
-BuildRequires:  file
-Requires(pre):  apache-mod_php php-mysql php-gd php-xml
-Requires(pre):  rpm-helper   
-Requires:	apache-mod_php
-
 Requires:	php-curl
 Requires:	php-gd
 Requires:	php-iconv
@@ -110,6 +104,11 @@ Requires:	imagemagick
 Requires:	mimetex
 Requires:	tetex-dvips
 Requires:	tetex-latex
+
+%if %mdkversion < 201010
+Requires(post):   rpm-helper
+Requires(postun):   rpm-helper
+%endif
 
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -146,10 +145,6 @@ find . -type d | xargs chmod 755
 
 # fix file perms
 find . -type f | xargs chmod 644
-
-# strip away annoying ^M
-find . -type f|xargs file|grep 'CRLF'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
-find . -type f|xargs file|grep 'text'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 
 # nuke bundled stuff
 rm -rf lib/pear
@@ -240,33 +235,36 @@ Alias /%{name} /var/www/%{name}
 </Directory>
 
 <Directory /var/www/%{name}/install>
-    Order Deny,Allow
-    Deny from All
+    Order deny,allow
+    Deny from all
     Allow from 127.0.0.1
     ErrorDocument 403 "Access denied per %{_sysconfdir}/httpd/conf/webapps.d/%{name}.conf"
  </Directory>
 
 <FilesMatch install.php>
-    Order Deny,Allow
-    Deny from All
+    Order deny,allow
+    Deny from all
     Allow from 127.0.0.1
     ErrorDocument 403 "Access denied per %{_sysconfdir}/httpd/conf/webapps.d/%{name}.conf"
 </FilesMatch>
 
 EOF
 
-%post
-%_post_webapp
-
-%postun
-%_postun_webapp
-
 %clean
 rm -rf %{buildroot}
 
+%post
+%if %mdkversion < 201010
+%_post_webapp
+%endif
+
+%postun
+%if %mdkversion < 201010
+%_postun_webapp
+%endif
+
 %files
 %defattr(-,root,root)
-%attr(0644,root,root) %config(noreplace) %{_sysconfdir}/httpd/conf/webapps.d/%{name}.conf
-%defattr(0644,apache,apache,0755)
+%config(noreplace) %{_sysconfdir}/httpd/conf/webapps.d/%{name}.conf
 /var/www/%{name}
 %attr(2777,apache,apache) %dir /var/moodledata
