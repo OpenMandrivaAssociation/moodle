@@ -4,8 +4,8 @@
 
 Summary:    A course management system for distance education
 Name:       moodle
-Version:    1.9.5
-Release:    %mkrel 2
+Version:    1.9.9
+Release:    %mkrel 1
 License:    GPLv2
 Group:      System/Servers
 URL:        http://moodle.org/
@@ -82,6 +82,21 @@ Source69:   http://download.moodle.org/lang16/to_utf8.zip
 Source70:   http://download.moodle.org/lang16/tr_utf8.zip
 Source71:   http://download.moodle.org/lang16/uk_utf8.zip
 Source72:   http://download.moodle.org/lang16/vi_utf8.zip
+Source73:   http://download.moodle.org/lang16/dv_utf8.zip
+Source74:   http://download.moodle.org/lang16/cy_utf8.zip                              
+Source75:   http://download.moodle.org/lang16/en_utf8.zip                              
+Source76:   http://download.moodle.org/lang16/mr_utf8.zip                              
+Source77:   http://download.moodle.org/lang16/ur_utf8.zip                              
+Source78:   http://download.moodle.org/lang16/ast_utf8.zip                              
+Source79:   http://download.moodle.org/lang16/la_utf8.zip                              
+Source80:   http://download.moodle.org/lang16/uz_utf8.zip                              
+Source81:   http://download.moodle.org/lang16/kk_utf8.zip                              
+Source82:   http://download.moodle.org/lang16/mk_utf8.zip                              
+Source83:   http://download.moodle.org/lang16/hy_utf8.zip                              
+Source84:   http://download.moodle.org/lang16/ta_lk_utf8.zip                              
+Source85:   http://download.moodle.org/lang16/zu_utf8.zip                              
+Source86:   http://download.moodle.org/lang16/bn_utf8.zip                              
+
 
 Patch0:     moodle-external_mimetex.diff
 Patch1:     moodle-1.9.4-CVE-2009-1171.diff
@@ -133,7 +148,7 @@ supplement face-to-face teaching.
 %patch1 -p0
 
 # magic by anssi
-pushd lang; %{expand:%(for i in {2..71}; do echo "unzip -q %%SOURCE$i"; done)}; popd
+pushd lang; %{expand:%(for i in {2..86}; do echo "unzip -q %%SOURCE$i"; done)}; popd
 
 # clean up CVS stuff
 for i in `find . -type d -name CVS` `find . -type f -name .cvs\*` `find . -type f -name .#\*`; do
@@ -144,7 +159,7 @@ done
 find . -type d | xargs chmod 755
 
 # fix file perms
-find . -type f | xargs chmod 644
+find . -type f -print0 | xargs --null chmod 644
 
 # nuke bundled stuff
 rm -rf lib/pear
