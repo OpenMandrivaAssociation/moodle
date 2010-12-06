@@ -5,7 +5,7 @@
 Summary:    A course management system for distance education
 Name:       moodle
 Version:    1.9.9
-Release:    %mkrel 1
+Release:    %mkrel 2
 License:    GPLv2
 Group:      System/Servers
 URL:        http://moodle.org/
