@@ -4,8 +4,8 @@
 
 Summary:    A course management system for distance education
 Name:       moodle
-Version:    1.9.9
-Release:    %mkrel 2
+Version:    2.2
+Release:    %mkrel 1
 License:    GPLv2
 Group:      System/Servers
 URL:        http://moodle.org/
@@ -144,8 +144,8 @@ supplement face-to-face teaching.
 %prep
 
 %setup -q -n %{name}
-%patch0 -p0
-%patch1 -p0
+#%patch0 -p0
+#%patch1 -p0
 
 # magic by anssi
 pushd lang; %{expand:%(for i in {2..86}; do echo "unzip -q %%SOURCE$i"; done)}; popd
