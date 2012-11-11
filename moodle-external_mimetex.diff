@@ -1,0 +1,11 @@
+--- filter/tex/lib.php	2007-12-26 03:24:43.000000000 +0100
++++ filter/tex/lib.php.oden	2008-09-06 16:44:55.000000000 +0200
+@@ -26,7 +26,7 @@
+     }
+ 
+     switch (PHP_OS) {
+-        case "Linux":   return "$CFG->dirroot/filter/tex/mimetex.linux";
++        case "Linux":   return "/var/www/cgi-bin/mimetex.cgi";
+         case "Darwin":  return "$CFG->dirroot/filter/tex/mimetex.darwin";
+         case "FreeBSD": return "$CFG->dirroot/filter/tex/mimetex.freebsd";
+     }
