@@ -283,3 +283,63 @@ rm -rf %{buildroot}
 %config(noreplace) %{_sysconfdir}/httpd/conf/webapps.d/%{name}.conf
 /var/www/%{name}
 %attr(2777,apache,apache) %dir /var/moodledata
+
+
+%changelog
+* Mon Dec 12 2011 Sergey Zhemoitel <serg@mandriva.org> 2.2-1mdv2012.0
++ Revision: 740588
+- add new version 2.2
+
+* Mon Dec 06 2010 Oden Eriksson <oeriksson@mandriva.com> 1.9.9-2mdv2011.0
++ Revision: 612929
+- the mass rebuild of 2010.1 packages
+
+  + Jerome Martin <jmartin@mandriva.org>
+    - Version 1.9.9
+
+* Sun Feb 21 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.9.5-2mdv2010.1
++ Revision: 509213
+- rely on filetrigger for reloading apache configuration begining with 2010.1, rpm-helper macros otherwise
+
+* Fri Jul 31 2009 Frederik Himpe <fhimpe@mandriva.org> 1.9.5-1mdv2010.0
++ Revision: 405256
+- update to new version 1.9.5
+
+* Tue Mar 31 2009 Oden Eriksson <oeriksson@mandriva.com> 1.9.4-2mdv2009.1
++ Revision: 362835
+- bump release
+- P1: security fix for CVE-2009-1171
+
+* Tue Feb 17 2009 Jerome Martin <jmartin@mandriva.org> 1.9.4-1mdv2009.1
++ Revision: 341165
+- 1.9.4
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - lowercase ImageMagick
+
+* Thu Oct 16 2008 Oden Eriksson <oeriksson@mandriva.com> 1.9.3-1mdv2009.1
++ Revision: 294420
+- 1.9.3
+- new S2 - S72
+
+* Sat Sep 06 2008 Oden Eriksson <oeriksson@mandriva.com> 1.9.2-1mdv2009.0
++ Revision: 281928
+- 1.9.2
+- new S2 - S72
+- rediffed P0
+
+* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 1.8.2-3mdv2009.0
++ Revision: 252776
+- rebuild
+
+* Thu Jan 03 2008 Olivier Blin <blino@mandriva.org> 1.8.2-1mdv2008.1
++ Revision: 140955
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Tue Aug 21 2007 Oden Eriksson <oeriksson@mandriva.com> 1.8.2-1mdv2008.0
++ Revision: 68635
+- Import moodle
+
