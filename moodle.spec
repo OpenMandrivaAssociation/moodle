@@ -5,7 +5,7 @@
 Summary:    A course management system for distance education
 Name:       moodle
 Version:    2.2
-Release:    %mkrel 1
+Release:    2
 License:    GPLv2
 Group:      System/Servers
 URL:        http://moodle.org/
@@ -268,15 +268,7 @@ EOF
 %clean
 rm -rf %{buildroot}
 
-%post
-%if %mdkversion < 201010
-%_post_webapp
-%endif
 
-%postun
-%if %mdkversion < 201010
-%_postun_webapp
-%endif
 
 %files
 %defattr(-,root,root)
