@@ -1,5 +1,3 @@
-%define _requires_exceptions pear(class\\|pear(odbcsocketserver.class.php)\\|pear(smartypants.php)\\|perl(AlgParser)\\|pear(domxml-php4-to-php5.php)
-
 %undefine __find_provides
 
 Summary:    A course management system for distance education
@@ -120,13 +118,7 @@ Requires:	mimetex
 Requires:	tetex-dvips
 Requires:	tetex-latex
 
-%if %mdkversion < 201010
-Requires(post):   rpm-helper
-Requires(postun):   rpm-helper
-%endif
-
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Moodle is a learning management system for producing Internet-based course Web
