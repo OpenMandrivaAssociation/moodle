@@ -5,7 +5,7 @@
 Summary:    A course management system for distance education
 Name:       moodle
 Version:    2.2
-Release:    2
+Release:    3
 License:    GPLv2
 Group:      System/Servers
 URL:        http://moodle.org/
