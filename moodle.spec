@@ -95,6 +95,7 @@ Source84:   http://download.moodle.org/lang16/ta_lk_utf8.zip
 Source85:   http://download.moodle.org/lang16/zu_utf8.zip                              
 Source86:   http://download.moodle.org/lang16/bn_utf8.zip                              
 
+Source100:  moodle.rpmlintrc
 
 Patch0:     moodle-external_mimetex.diff
 Patch1:     moodle-1.9.4-CVE-2009-1171.diff
