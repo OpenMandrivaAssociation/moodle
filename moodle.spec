@@ -179,7 +179,7 @@ cat > %{buildroot}%{_sysconfdir}/httpd/conf/webapps.d/%{name}.conf << EOF
 Alias /%{name} /var/www/%{name}
 
 <Directory /var/www/%{name}>
-    Allow from All
+    Require all granted
 
     # On some PHP servers it may help if this file is copied
     # to the main moodle directory and renamed .htaccess
@@ -243,16 +243,12 @@ Alias /%{name} /var/www/%{name}
 </Directory>
 
 <Directory /var/www/%{name}/install>
-    Order deny,allow
-    Deny from all
-    Allow from 127.0.0.1
+    Require host 127.0.0.1
     ErrorDocument 403 "Access denied per %{_sysconfdir}/httpd/conf/webapps.d/%{name}.conf"
  </Directory>
 
 <FilesMatch install.php>
-    Order deny,allow
-    Deny from all
-    Allow from 127.0.0.1
+    Require host 127.0.0.1
     ErrorDocument 403 "Access denied per %{_sysconfdir}/httpd/conf/webapps.d/%{name}.conf"
 </FilesMatch>
 
