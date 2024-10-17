@@ -6,7 +6,7 @@ Version:    2.2
 Release:    5
 License:    GPLv2
 Group:      System/Servers
-URL:        http://moodle.org/
+URL:        https://moodle.org/
 Source0:    http://download.moodle.org/stable19/%{name}-%{version}.tgz
 
 Source2:    http://download.moodle.org/lang16/af_utf8.zip
